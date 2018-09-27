@@ -7,14 +7,12 @@
       <h1><a href="/">Singh's blog</a></h1>
     </div>
 
-    <div>
-      <p>published: 09.26.2018, 09:20</p>
-      <h2><a href="">My first post</a></h2>
-      <p>This is my first Django tutorial.</p>
-    </div>
-      <p>published: 09.26.2018, 09:20</p>
-      <h2><a href="">My second post</a></h2>
-      <p>This is my second Django tutorial.</p>
-    </div>
+    {% for post in posts %}
+      <div>
+        <p>publish: {{ post.publish_date}}</p>
+        <h1><a href="">{{ post.title }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
